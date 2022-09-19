@@ -62,3 +62,5 @@ def register_handlers_FSMAdmin(dp: Dispatcher):
     dp.register_message_handler(load_name, state=FSMAdmin.name)
     dp.register_message_handler(load_desk, state=FSMAdmin.desk)
     dp.register_message_handler(load_price, state= FSMAdmin.price)
+    
+    
