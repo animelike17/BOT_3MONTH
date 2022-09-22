@@ -5,6 +5,12 @@ import logging
 import asyncio
 
 from handlers import client, extra, callback, admin, fsmAdminMenu
+from database.bot_dp import sql_creat
+
+
+async def on_startup(_):
+    sql_create()
+
 
 client.register_handlers_client(dp)
 fsmAdminMenu.register_handlers_FSMAdmin(dp)
