@@ -46,3 +46,5 @@ async def sql_command_all():
 async def sql_command_delete(name):
     cursor.execute("DELETE FROM menu WHERE name == ?", (name,))
     db.commit()
+
+    
