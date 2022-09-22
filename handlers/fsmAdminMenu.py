@@ -104,3 +104,6 @@ def register_handlers_FSMAdmin(dp: Dispatcher):
     dp.register_message_handler(delete_data, commands=['del'])
     dp.register_callback_query_handler(complete_delete, lambda call: call.data.startswith('Delete '))
     
+    
+    
+    
