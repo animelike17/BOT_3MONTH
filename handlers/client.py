@@ -2,6 +2,8 @@ import random
 from aiogram import types, Dispatcher
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from config import bot, dp
+from database.bot_dp import *
+
 
 async def mem(message: types.Message):
     photo = open('media/mem.jpg', 'rb')
@@ -33,7 +35,13 @@ async def pin(message: types.Message):
     if message.reply_to_message:
         await bot.pin_chat_message(message.chat.id, message.reply_to_message.message_id)
     else:
-        await message.reply('Надо ответить на сообщение')
+        await message.reply('Надо ответить на сообщение'
+
+                            
+                            
+                            
+async def show_random_food(message: types.Message):
+    await sql_command_random(message)
 
 
 def register_handlers_client(dp: Dispatcher):
