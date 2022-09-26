@@ -2,7 +2,7 @@ import random
 from aiogram import types, Dispatcher
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from config import bot, dp
-from database.bot_dp import *
+from database.bot_dp import sql_command_random
 
 
 async def mem(message: types.Message):
@@ -48,6 +48,7 @@ def register_handlers_client(dp: Dispatcher):
     dp.register_message_handler(mem, commands=['mem'])
     dp.register_message_handler(quiz_1, commands=['quiz'])
     dp.register_message_handler(pin, commands=['pin'], commands_prefix='!')
-                            
+    dp.register_message_handler(show_random_food, commands=['random'])
+
                             
     
