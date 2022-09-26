@@ -2,12 +2,13 @@ from aiogram import types, Dispatcher
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from config import bot, ADMIN
+from aiogram.dispatcher.filters import Text
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
 
 from config import bot, ADMIN
-from database.bot_dp import *
+from database.bot_dp import sql_command_insert, sql_command_delete, sql_command_all
 
 
 class FSMAdmin(StatesGroup):
@@ -23,7 +24,7 @@ async  def start(message: types.Message):
         await message.answer(f'привет {message.from_user.full_name} \n'
                              f'Отправь фото ')
     else:
-        await  message.answer('ПИши в лс')
+        await  message.answer('пиши в лс')
 
 
 async def load_photo(message: types.Message, state: FSMContext):
