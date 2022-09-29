@@ -9,6 +9,7 @@ from database.bot_dp import sql_creat
 
 async def on_startup(_):
      asyncio.create_task(notifications.scheduler())
+     sql_create()
 
 
 client.register_handlers_client(dp)
